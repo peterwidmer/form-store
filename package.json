@@ -1,0 +1,24 @@
+{
+  "name": "form-store",
+  "version": "1.0.0",
+  "description": "reactive store for dynamics 365 forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterwidmer/form-store.git"
+  },
+  "keywords": [
+    "store",
+    "dynamics",
+    "365"
+  ],
+  "author": "Peter Widmer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peterwidmer/form-store/issues"
+  },
+  "homepage": "https://github.com/peterwidmer/form-store#readme"
+}
