@@ -1,5 +1,5 @@
 {
-  "name": "form-store",
+  "name": "@peterwidmer/form-store",
   "version": "1.0.0",
   "description": "reactive store for dynamics 365 forms",
   "main": "index.js",
