@@ -6,6 +6,7 @@
   "types": "dist/form-store.js",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
+    "@types/xrm": "^9.0.77",
     "rollup": "^4.3.0",
     "rollup-plugin-dts": "^6.1.0",
     "tslib": "^2.6.2",
@@ -13,7 +14,7 @@
   },
   "files": [
     "dist/*.js",
-	"dist/form-store.d.ts"
+    "dist/form-store.d.ts"
   ],
   "scripts": {
     "test": "test",
