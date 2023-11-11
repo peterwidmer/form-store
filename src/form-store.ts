@@ -62,9 +62,9 @@ export function CreateStore<E>(eventContext: Xrm.Events.EventContext) : Store<E>
         return dataStorage[property];
       }
       return null;
-    }
+    },
 
-    register: (callback, crmFields, otherProperties = null) => {
+    register: (callback: Function, crmFields: string [], otherProperties: any = null) => {
       if(crmFields) {
         crmFields.forEach((field: string) => {
           
@@ -96,6 +96,55 @@ export function CreateStore<E>(eventContext: Xrm.Events.EventContext) : Store<E>
           handlers[field] = list;
         });
       }
+
+      if(otherProperties) {
+        otherProperties.forEach((property:string) => {
+          const list = handlers[property] ?? [];
+          list.push(callback);
+          handlers[property] = list;
+        });
+      }
+
+    },
+
+    unsubscribe: (event: any, callback: Function) => {
+      let list = handlers[event] ?? [];
+      list = list.filter(h => h !== callback);
+      handlers[event] = list;
+    },
+
+    getEventContext: () => {
+      return eventContext;
+    },
+
+    getFormContext: () => {
+      return eventContext.getFormContext();
+    },
+
+    getContextEntityName: () => {
+      return eventContext.getFormContext().data.entity.getEntityName();
+    },
+
+    completeRegistration: () => {
+      const allRegisteredCallbacks: Function[] = [];
+      for(const key in handlers) {
+        handlers[key].forEach((callback) => {
+          if(!allRegisteredCallbacks.includes(callback)){
+            allRegisteredCallbacks.push(callback);
+          }
+        });
+      }
+
+      allRegisteredCallbacks.forEach(callback => {
+        callback(self);
+      });
+    },
+
+    init: (store: Store<E>) => {
+      self = store;
+      return self;
     }
   }
+
+  return store.init(store);
 }
