@@ -2,9 +2,17 @@
   "name": "@peterwidmer/form-store",
   "version": "1.0.0",
   "description": "reactive store for dynamics 365 forms",
-  "main": "index.js",
+  "main": "dist/form-store.js",
+  "types": "dist/form-store.js",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "rollup": "^4.3.0",
+    "typescript": "^5.2.2",
+	"tslib": "^2.6.2"
+  },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "rollup --config ./rollup.config.mjs" 
   },
   "repository": {
     "type": "git",
