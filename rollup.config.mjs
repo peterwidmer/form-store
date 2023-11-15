@@ -7,7 +7,7 @@ export default [
 	  input: 'src/form-store.ts',
 	  output: {
 		dir: 'dist',
-		format: 'cjs'
+		format: 'es'
 	  },
 	  plugins: [typescript()]
   },

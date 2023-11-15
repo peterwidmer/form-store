@@ -1,6 +1,6 @@
 {
   "name": "@peterwidmer/form-store",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "reactive store for dynamics 365 forms",
   "main": "",
   "types": "dist/form-store.d.ts",
