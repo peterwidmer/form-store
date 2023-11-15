@@ -1,9 +1,9 @@
 {
   "name": "@peterwidmer/form-store",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "reactive store for dynamics 365 forms",
-  "main": "dist/form-store.js",
-  "types": "dist/form-store.js",
+  "main": "",
+  "types": "dist/form-store.d.ts",
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/xrm": "^9.0.77",
